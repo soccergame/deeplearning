@@ -1,0 +1,1 @@
+{"sogou_input_response_time":{"img_size_hight":960,"need_rgb_to_gray":false,"img_size_width":600,"input_dim":[12, 100, 1],"train_data":"train_data/siamese_cnn","test_data":"test_data/siamese_cnn","batch_size":128,"epochs":40,"validation_split":0.2}}
