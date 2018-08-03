@@ -1,0 +1,22 @@
+ssh root@10.144.122.181
+passport:imeKernel@123
+linuix访问服务器操作
+
+download:scp -r root@10.144.122.181:/root/sogou_ai/test/ /home/typhoon/test/
+upload:scp -r /home/space/music/ root@www.runoob.com:/home/root/others/ 
+
+
+delete operator
+
+rm (选项)(参数)
+-d：直接把欲删除的目录的硬连接数据删除成0，删除该目录；
+-f：强制删除文件或目录；
+-i：删除已有文件或目录之前先询问用户；
+-r或-R：递归处理，将指定目录下的所有文件与子目录一并处理；
+--preserve-root：不对根目录进行递归操作；
+-v：显示指令的详细执行过程。
+
+
+快捷键操作：https://www.cnblogs.com/wqsbk/p/5649037.html
+
+12
