@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sogou_evaluate</title>
+</head>
+<body>
+    <form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        input_name&nbsp&nbsp&nbsp<input type='text' name='input_name'/>
+        input_version&nbsp<input type='text' name="input_version"/>
+        &nbspremark&nbsp<input type='text' name="remark"/>
+        <br/>
+        <br/>
+        history_data&nbsp
+        <select>
+            <option value=1>{{ history_data.history_name}}</option>
+        </select>
+        video_upload&nbsp&nbsp<input type="file" name="video_upload"/>
+        test_data_upload&nbsp&nbsp<input type="file" name="test_data_upload"/>
+        <input type="submit" value="OK"/>
+        <br/>
+        <br/>
+        name&nbsp:&nbsp{{ input_name }}&nbsp&nbspversion&nbsp:&nbsp{{ input_version }}&nbsp&nbspremark&nbsp:&nbsp{{ remark }}
+        <br/>
+        <table style="width: 100%">
+            <tr style="width: 100%">
+                <th>key_name(ms)</th>
+                <th>cand_response_time(ms)</th>
+                <th>pinyin_response_time(ms)</th>
+            </tr>
+            <tr>
+                {% for word in result_info %}
+                    <tr>
+                        <th><a href="../details">{{ word.key_name }}</a></th>
+                        <th><a href="../details">{{ word.aver_cand }}</a></th>
+                        <th><a href="../details">{{ word.aver_pinyin }}</a></th>
+                    </tr>
+                {% endfor %}
+            </tr>
+        </table>
+    </form>
+    <br/>
+    <br/>
+</body>
+</html>

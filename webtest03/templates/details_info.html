@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sogou_evaluate</title>
+</head>
+<body>
+    <form method="post" action="">
+        {% csrf_token %}
+
+        <tr style="width: 100%">
+            <th>Details of Video Processing Result</th>
+        </tr>
+        <br/>
+        <br/>
+        <table style="width: 100%">
+            <tr style="width: 100%">
+                <th>key_name(ms)</th>
+                <th>cand_response_time(ms)</th>
+                <th>pinyin_response_time(ms)</th>
+                <th>start_frame(ms)</th>
+                <th>cand_change_frame(ms)</th>
+                <th>pinyin_change_frame(ms)</th>
+            </tr>
+            <tr>
+                <th>
+                    <table>
+                        {% for word in result_info %}
+                            {% for item in word.word_result.key_name %}
+                                <ul>
+                                    {{ item }}
+                                </ul>
+                            {% endfor %}
+                        {% endfor %}
+                    </table>
+                </th>
+                <th>
+                    <table>
+                        {% for word in result_info %}
+                            {% for item in word.word_result.cand %}
+                                <ul>
+                                    {{ item }}
+                                </ul>
+                            {% endfor %}
+                        {% endfor %}
+                    </table>
+                </th>
+                <th>
+                    <table>
+                        {% for word in result_info %}
+                            {% for item in word.word_result.pinyin %}
+                                <ul>
+                                    {{ item }}
+                                </ul>
+                            {% endfor %}
+                        {% endfor %}
+                    </table>
+                </th>
+                <th>
+                    <table>
+                        {% for word in result_info %}
+                            {% for item in word.word_result.start %}
+                                <ul>
+                                    {{ item }}
+                                </ul>
+                            {% endfor %}
+                        {% endfor %}
+                    </table>
+                </th>
+                <th>
+                    <table>
+                        {% for word in result_info %}
+                            {% for item in word.word_result.cand_change %}
+                                <ul>
+                                    {{ item }}
+                                </ul>
+                            {% endfor %}
+                        {% endfor %}
+                    </table>
+                </th>
+                <th>
+                    <table>
+                        {% for word in result_info %}
+                            {% for item in word.word_result.pinyin_change %}
+                                <ul>
+                                    {{ item }}
+                                </ul>
+                            {% endfor %}
+                        {% endfor %}
+                    </table>
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
