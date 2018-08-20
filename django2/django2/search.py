@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
+import sys
 
+reload(sys)
+sys.setdefaultencoding('utf8')
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 
